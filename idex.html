@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let car = 
+        {
+            year: 2024,
+            color: "Black",
+            country: "Germany",
+            mark: "Porsche",
+            speed: 100,
+            display: function () {
+                document.write(this.year + "<br />");
+                document.write(this.color + "<br />");
+                document.write(this.country + "<br />");
+                document.write(this.mark + "<br />");
+                document.write(this.speed + "<br />");
+            }
+        };
+        car.display();
+
+        // Сериализация
+        let serializedCar = JSON.stringify(car);
+        document.write("<br />");
+        document.write(serializedCar + "<br />");
+
+        // Десериализация
+        let car2 = JSON.parse(serializedCar);
+        car2.display = function () {
+            document.write(this.year + "<br />");
+            document.write(this.color + "<br />");
+            document.write(this.country + "<br />");
+            document.write(this.mark + "<br />");
+            document.write(this.speed + "<br />");
+        };
+        document.write("<br />");
+        car2.display();
+    </script>
+</body>
+</html>
